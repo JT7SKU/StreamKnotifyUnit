@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28606.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKnotifyUnit", "StreamKnotifyUnit\StreamKnotifyUnit.csproj", "{80BAAD04-2E5F-4E86-AFF8-5C8852F4F02E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKnotifyUnit.Shared", "StreamKnotifyUnit.Shared\StreamKnotifyUnit.Shared.csproj", "{4D8B0F06-C184-4882-9816-9E79251266AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitchAPI", "TwitchAPI\TwitchAPI.csproj", "{8B787EB0-576A-4C4F-95F2-0EDC9BEE6FFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80BAAD04-2E5F-4E86-AFF8-5C8852F4F02E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80BAAD04-2E5F-4E86-AFF8-5C8852F4F02E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80BAAD04-2E5F-4E86-AFF8-5C8852F4F02E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80BAAD04-2E5F-4E86-AFF8-5C8852F4F02E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D8B0F06-C184-4882-9816-9E79251266AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D8B0F06-C184-4882-9816-9E79251266AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D8B0F06-C184-4882-9816-9E79251266AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D8B0F06-C184-4882-9816-9E79251266AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B787EB0-576A-4C4F-95F2-0EDC9BEE6FFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B787EB0-576A-4C4F-95F2-0EDC9BEE6FFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B787EB0-576A-4C4F-95F2-0EDC9BEE6FFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B787EB0-576A-4C4F-95F2-0EDC9BEE6FFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91ED8E94-8646-4F8C-A143-8EA6839F7C09}
+	EndGlobalSection
+EndGlobal

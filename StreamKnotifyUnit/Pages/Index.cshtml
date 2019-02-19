@@ -1,0 +1,58 @@
+﻿@page "/"
+@using StreamKnotifyUnit.Services
+@using Kendo.Blazor.Components.TabStrip
+@inject WeatherForecastService ForecastService
+
+<h1>Hello, JT7 SKU Community!</h1>
+<select bind=@tabPosition>
+    <option value=@KendoTabPosition.Top>Top</option>
+    <option value=@KendoTabPosition.Left>Left</option>
+    <option value=@KendoTabPosition.Right>Right</option>
+    <option value=@KendoTabPosition.Bottom>Bottom</option>
+</select>
+
+<KendoTabStrip TabPosition=@tabPosition>
+    <KendoTab Title="Sofia">
+        <h2>22<span>ºC</span></h2>
+        <p>Sunny weather in Sofia</p>
+    </KendoTab>
+    <KendoTab Title="New York">
+        <h2>24<span>ºC</span></h2>
+        <p>Partly Cloudy weather in New York</p>
+    </KendoTab>
+    <KendoTab Title="Paris">
+        <h2>21<span>ºC</span></h2>
+        <p>Rainy weather in Paris</p>
+    </KendoTab>
+</KendoTabStrip>
+<KendoGrid Data=@GridData Height=@Height>
+    <KendoGridColumns>
+        <KendoGridColumn Field="Date">
+            <Template>
+                @((context as WeatherForecast).Date.ToString("MMMM dd, yyyy"))
+            </Template>
+        </KendoGridColumn>
+        <KendoGridColumn Field="TemperatureC" Title="Temp. C" />
+        <KendoGridColumn Field="Summary" />
+    </KendoGridColumns>
+</KendoGrid>
+<button class="btn btn-info" onclick="@(() => toastService.ShowToast("I'm an INFO message", ToastLevel.Info))">Info Toast</button>
+<button class="btn btn-success" onclick="@(() => toastService.ShowToast("I'm a SUCCESS message", ToastLevel.Success))">Success Toast</button>
+<button class="btn btn-warning" onclick="@(() => toastService.ShowToast("I'm a WARNING message", ToastLevel.Warning))">Warning Toast</button>
+<button class="btn btn-danger" onclick="@(() => toastService.ShowToast("I'm an ERROR message", ToastLevel.Error))">Error Toast</button>
+@functions {
+    KendoTabPosition tabPosition = KendoTabPosition.Top;
+    public IEnumerable<WeatherForecast> GridData { get; set; }
+    public decimal Height { get; set; }
+
+    protected override async Task OnInitAsync()
+    {
+        await LoadData();
+        Height = 300;
+    }
+
+    private async Task LoadData()
+    {
+        GridData = await ForecastService.GetForecastAsync(DateTime.Now);
+    }
+}

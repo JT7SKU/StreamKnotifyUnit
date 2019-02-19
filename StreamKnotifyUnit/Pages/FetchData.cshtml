@@ -1,0 +1,44 @@
+﻿@page "/fetchdata"
+@inject HttpClient Http
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <KendoGrid Data=@forecasts Pageable=true PageSize=5 Sortable=true>
+        <KendoGridColumn Field=@nameof(WeatherForecast.Date)>
+            <Template>
+                @($"{(context as WeatherForecast).Date:d}")
+            </Template>
+        </KendoGridColumn>
+        <KendoGridColumn Field=@nameof(WeatherForecast.TemperatureC) />
+        <KendoGridColumn Field=@nameof(WeatherForecast.TemperatureF) />
+        <KendoGridColumn Field=@nameof(WeatherForecast.Summary) />
+    </KendoGrid>
+}
+
+@functions {
+    WeatherForecast[] forecasts;
+
+    protected override async Task OnInitAsync()
+    {
+        forecasts = await Http.GetJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+    }
+
+    class WeatherForecast
+    {
+        public DateTime Date { get; set; }
+
+        public int TemperatureC { get; set; }
+
+        public int TemperatureF { get; set; }
+
+        public string Summary { get; set; }
+    }
+}
