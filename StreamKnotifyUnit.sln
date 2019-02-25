@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.28606.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKnotifyUnit", "StreamKnotifyUnit\StreamKnotifyUnit.csproj", "{80BAAD04-2E5F-4E86-AFF8-5C8852F4F02E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKnotifyUnit.Shared", "StreamKnotifyUnit.Shared\StreamKnotifyUnit.Shared.csproj", "{4D8B0F06-C184-4882-9816-9E79251266AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKnotifyUnitLibrary", "StreamKnotifyUnit.Shared\StreamKnotifyUnitLibrary.csproj", "{4D8B0F06-C184-4882-9816-9E79251266AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitchAPI", "TwitchAPI\TwitchAPI.csproj", "{8B787EB0-576A-4C4F-95F2-0EDC9BEE6FFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwitchAPI", "TwitchAPI\TwitchAPI.csproj", "{8B787EB0-576A-4C4F-95F2-0EDC9BEE6FFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
