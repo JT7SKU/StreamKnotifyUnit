@@ -12,7 +12,7 @@ namespace TwitchAPI
 {
     public static class Function1
     {
-        [FunctionName("Function1")]
+        [FunctionName("SubscriberFunction")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
