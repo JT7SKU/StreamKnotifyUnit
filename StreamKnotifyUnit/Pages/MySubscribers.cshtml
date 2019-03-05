@@ -1,5 +1,25 @@
 ﻿@page "/mysubscribers"
-
+@using StreamKnotifyUnit.Shared;
+@inject StreamKnotifyUnit.Services.TwitchService Twitchy;
+<KendoGrid Data="SubsData" Height="200">
+    <KendoGridColumns>
+        <KendoGridColumn Field="@nameof(Subscriber.TimeStamp)" Title="Time" />
+        <KendoGridColumn Field="@nameof(Subscriber.User)" Title="Username" />
+        <KendoGridColumn Field="@nameof(Subscriber.SubscribeType)" Title="Tier Sub" />
+        <KendoGridColumn Field="@nameof(Subscriber.StreakMonths)" Title="Streak" />
+        <KendoGridColumn Field="@nameof(Subscriber.CumulativeMonths)" Title="Overal Subbed" />
+    </KendoGridColumns>
+</KendoGrid>
 
 @functions{
+    public List<Subscriber> SubsData { get; set; }
+
+    protected override Task OnInitAsync()
+    {      
+       return GetSubsData();
+    }
+    protected async Task GetSubsData()
+    {
+        SubsData = await Twitchy.GetSubscribersAsync();
+    }
 }

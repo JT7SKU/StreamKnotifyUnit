@@ -1,4 +1,24 @@
 ﻿@page "/mycheers"
-
+@using StreamKnotifyUnit.Shared;
+@inject StreamKnotifyUnit.Services.TwitchService Twitchy;
+<KendoGrid Data="CheerData" Height="200">
+    <KendoGridColumns>
+        <KendoGridColumn Field="@nameof(Cheer.Message.TimeStamp)" Title="Time" />
+        <KendoGridColumn Field="@nameof(Cheer.User)" Title="Username" />
+        <KendoGridColumn Field="@nameof(Cheer.Amount)" Title="Cheered" />
+        <KendoGridColumn Field="@nameof(Cheer.Message.Context)" Title="Message" />
+    </KendoGridColumns>
+</KendoGrid>
 @functions{
+     public List<Cheer> CheerData { get; set; }
+
+    protected override async Task OnInitAsync()
+    {
+        
+       await GetCheersData();
+    }
+    protected async Task GetCheersData()
+    {
+        CheerData = await Twitchy.GetCheerersAsync();
+    }
 }

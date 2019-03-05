@@ -1,5 +1,25 @@
 ﻿@page "/mytips"
-
+@using StreamKnotifyUnit.Shared;
+@inject StreamKnotifyUnit.Services.TwitchService Twitchy;
+<KendoGrid Data="TipsData" Height="200">
+    <KendoGridColumns>
+        <KendoGridColumn Field="@nameof(Tip.Message.TimeStamp)" Title="Time" />
+        <KendoGridColumn Field="@nameof(Tip.User)" Title="Username" />
+        <KendoGridColumn Field="@nameof(Tip.Amount)" Title="Tier Sub" />
+        <KendoGridColumn Field="@nameof(Tip.Message.Context)" Title="Streak" />
+    </KendoGridColumns>
+</KendoGrid>
 
 @functions{
+    public List<Tip> TipsData { get; set; }
+
+    protected override async Task OnInitAsync()
+    {
+        
+       await GetTipsData();
+    }
+    protected async Task GetTipsData()
+    {
+        TipsData = await Twitchy.GetTipperssAsync();
+    }
 }

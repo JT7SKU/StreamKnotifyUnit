@@ -17,11 +17,9 @@ namespace StreamKnotifyUnit.Services
             OnShow?.Invoke(message, level);
             StartCountdown();
         }
-
         private void StartCountdown()
         {
             SetCountdown();
-
             if (Countdown.Enabled)
             {
                 Countdown.Stop();

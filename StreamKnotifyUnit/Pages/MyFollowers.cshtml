@@ -1,5 +1,24 @@
 ﻿@page "/myfollowers/"
-
+@using StreamKnotifyUnit.Shared;
+@inject StreamKnotifyUnit.Services.TwitchService Twitchy;
+<KendoGrid Data="FollowerData" Height="200">
+    <KendoGridColumns>
+        <KendoGridColumn Field="@nameof(Follower.TimeStamp)" Title="Time" />
+        <KendoGridColumn Field="@nameof(Follower.User)" Title="Username" />
+        <KendoGridColumn Field="@nameof(Follower.Follow)" Title="Follow" />      
+    </KendoGridColumns>
+</KendoGrid>
 
 @functions{
+    public List<Follower> FollowerData { get; set; }
+
+    protected override async Task OnInitAsync()
+    {
+
+        await GetFollowerData();
+    }
+    protected async Task GetFollowerData()
+    {
+        FollowerData = await Twitchy.GetFollowersAsync();
+    }
 }

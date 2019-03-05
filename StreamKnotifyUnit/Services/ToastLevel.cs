@@ -7,9 +7,9 @@ namespace StreamKnotifyUnit.Services
 {
     public enum ToastLevel
     {
-        newFollower,
-        newSubscriber,
-        newTip,
-        newCheer
+        NewFollower,
+        NewSubscriber,
+        NewTip,
+        NewCheer
     }
 }
