@@ -59,8 +59,8 @@
 @*<KendoButton class="active" onclick="@(() => ToastService.ShowToast("I'm an INFO message", ToastLevel.NewCheer))">Info Toast</KendoButton>
     <KendoButton class="active" onclick="@(() => ToastService.ShowToast("I'm a SUCCESS message", ToastLevel.NewFollower))">Success Toast</KendoButton>
     <KendoButton class="btn btn-warning" onclick="@(() => ToastService.ShowToast("I'm a WARNING message", ToastLevel.NewSubscriber))">Warning Toast</KendoButton>
-    <KendoButton class="btn btn-danger" onclick="@(() => ToastService.ShowToast("I'm an ERROR message", ToastLevel.NewTip))">Error Toast</KendoButton>
-@functions {*@
+    <KendoButton class="btn btn-danger" onclick="@(() => ToastService.ShowToast("I'm an ERROR message", ToastLevel.NewTip))">Error Toast</KendoButton>*@
+@functions {
     KendoTabPosition tabPosition = KendoTabPosition.Top;
     public List<Follower> FollowerData { get; set; }
     public List<Subscriber> SubsData { get; set; }

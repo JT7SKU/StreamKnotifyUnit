@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Timers;
 
-namespace StreamKnotifyUnit.Services
+namespace StreamKomponentUnitLib.Toast
 {
     public class ToastService : IDisposable
     {

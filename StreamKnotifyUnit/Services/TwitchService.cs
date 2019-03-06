@@ -9,7 +9,7 @@ namespace StreamKnotifyUnit.Services
 {
     public class TwitchService
     {
-        private HttpClient Http = new HttpClient();
+        private readonly HttpClient Http = new HttpClient();
         public async Task<List<Subscriber>> GetSubscribersAsync()
         { 
             var subscribers = await Http.GetJsonAsync<List<Subscriber>>("");

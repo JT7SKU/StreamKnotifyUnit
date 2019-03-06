@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Components;
-using StreamKnotifyUnit.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace StreamKnotifyUnit.Shared
+
+namespace StreamKomponentUnitLib.Toast
 {
     public class ToastBase : ComponentBase, IDisposable
     {
@@ -40,22 +40,22 @@ namespace StreamKnotifyUnit.Shared
         {
             switch (level)
             {
-                case ToastLevel.newFollower:
+                case ToastLevel.NewFollower:
                     BackgroundCssClass = "bg-info";
                     IconCssClass = "info";
                     Heading = "Info";
                     break;
-                case ToastLevel.newSubscriber:
+                case ToastLevel.NewSubscriber:
                     BackgroundCssClass = "bg-success";
                     IconCssClass = "check";
                     Heading = "Success";
                     break;
-                case ToastLevel.newTip:
+                case ToastLevel.NewTip:
                     BackgroundCssClass = "bg-warning";
                     IconCssClass = "exclamation";
                     Heading = "Warning";
                     break;
-                case ToastLevel.newCheer:
+                case ToastLevel.NewCheer:
                     BackgroundCssClass = "bg-danger";
                     IconCssClass = "times";
                     Heading = "Error";
