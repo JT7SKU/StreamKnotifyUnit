@@ -1,7 +1,7 @@
 ﻿@page "/mysubscribers"
 @using StreamKnotifyUnit.Shared;
 @inject StreamKnotifyUnit.Services.TwitchService Twitchy;
-<KendoGrid Data="SubsData" Height="200">
+<KendoGrid Data="@SubsData" Height="200">
     <KendoGridColumns>
         <KendoGridColumn Field="@nameof(Subscriber.TimeStamp)" Title="Time" />
         <KendoGridColumn Field="@nameof(Subscriber.User)" Title="Username" />

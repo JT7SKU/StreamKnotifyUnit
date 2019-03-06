@@ -15,7 +15,7 @@
 
 <KendoTabStrip TabPosition=@tabPosition>
     <KendoTab Title="Followers">
-        <KendoGrid Data="FollowerData" Height="@Height">
+        <KendoGrid Data="@FollowerData" Height="@Height">
             <KendoGridColumns>
                 <KendoGridColumn Field="@nameof(Follower.TimeStamp)" Title="Time" />
                 <KendoGridColumn Field="@nameof(Follower.User)" Title="Username" />
@@ -24,7 +24,7 @@
         </KendoGrid>
     </KendoTab>
     <KendoTab Title="Subscribers">
-        <KendoGrid Data="SubsData" Height="@Height">
+        <KendoGrid Data="@SubsData" Height="@Height">
             <KendoGridColumns>
                 <KendoGridColumn Field="@nameof(Subscriber.TimeStamp)" Title="Time" />
                 <KendoGridColumn Field="@nameof(Subscriber.User)" Title="Username" />
@@ -35,7 +35,7 @@
         </KendoGrid>
     </KendoTab>
     <KendoTab Title="Tips">
-        <KendoGrid Data="TipsData" Height="@Height">
+        <KendoGrid Data="@TipsData" Height="@Height">
             <KendoGridColumns>
                 <KendoGridColumn Field="@nameof(Tip.Message.TimeStamp)" Title="Time" />
                 <KendoGridColumn Field="@nameof(Tip.User)" Title="Username" />
@@ -45,7 +45,7 @@
         </KendoGrid>
     </KendoTab>
     <KendoTab Title="Bits Cheered">
-        <KendoGrid Data="CheerData" Height="@Height">
+        <KendoGrid Data="@CheerData" Height="@Height">
             <KendoGridColumns>
                 <KendoGridColumn Field="@nameof(Cheer.Message.TimeStamp)" Title="Time" />
                 <KendoGridColumn Field="@nameof(Cheer.User)" Title="Username" />

@@ -1,7 +1,7 @@
 ﻿@page "/myweather"
 @using StreamKnotifyUnit.Shared;
 @inject StreamKnotifyUnit.Services.WeatherForecastService ForecastServ;
-<KendoGrid Data=Forecasts Pageable=true PageSize=5 Sortable=true>
+@*<KendoGrid Data=@Forecasts Pageable=true PageSize=5 Sortable=true>
     <KendoGridColumn Field=@nameof(WeatherForecast.Date)>
         <Template>
             @($"{(context as WeatherForecast).Date:d}")
@@ -9,17 +9,17 @@
     </KendoGridColumn>
     <KendoGridColumn Field=@nameof(WeatherForecast.TemperatureC) />
     <KendoGridColumn Field=@nameof(WeatherForecast.Summary) />
-</KendoGrid>
+</KendoGrid>*@
 
 @functions{
-     protected List<WeatherForecast> Forecasts { get; set; }
+     //public List<WeatherForecast> Forecasts { get; set; }
     protected override async Task OnInitAsync()
     {      
-       await GetForecasts();
+       await LoadData();
     }
-    protected async Task GetForecasts()
+    protected async Task LoadData()
     {
-        Forecasts = await ForecastServ.GetForecastAsync();
+       // Forecasts = await ForecastServ.GetForecastAsync();
     }
 
 }

@@ -1,7 +1,7 @@
 ﻿@page "/mycheers"
 @using StreamKnotifyUnit.Shared;
 @inject StreamKnotifyUnit.Services.TwitchService Twitchy;
-<KendoGrid Data="CheerData" Height="200">
+<KendoGrid Data="@CheerData" Height="200">
     <KendoGridColumns>
         <KendoGridColumn Field="@nameof(Cheer.Message.TimeStamp)" Title="Time" />
         <KendoGridColumn Field="@nameof(Cheer.User)" Title="Username" />

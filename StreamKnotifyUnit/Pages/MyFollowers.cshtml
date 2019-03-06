@@ -1,7 +1,7 @@
 ﻿@page "/myfollowers/"
 @using StreamKnotifyUnit.Shared;
 @inject StreamKnotifyUnit.Services.TwitchService Twitchy;
-<KendoGrid Data="FollowerData" Height="200">
+<KendoGrid Data="@FollowerData" Height="200">
     <KendoGridColumns>
         <KendoGridColumn Field="@nameof(Follower.TimeStamp)" Title="Time" />
         <KendoGridColumn Field="@nameof(Follower.User)" Title="Username" />

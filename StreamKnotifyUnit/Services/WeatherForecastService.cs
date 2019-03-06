@@ -9,14 +9,14 @@ namespace StreamKnotifyUnit.Services
 {
     public class WeatherForecastService
     {
-        HttpClient http = new HttpClient();
+        //private readonly HttpClient Http = new HttpClient();
        
 
-        public async Task<List<WeatherForecast>> GetForecastAsync()
-        {        
-            var forecast = await http.GetJsonAsync<IEnumerable<WeatherForecast>>("");
-            return forecast.ToList();
-        }
+        //public async Task<List<WeatherForecast>> GetForecastAsync()
+        //{        
+        //    var forecasts = await Http.GetJsonAsync<List<WeatherForecast>>("sample-data/weather.json");
+        //    return forecasts;
+        //}
         
     }
 }
