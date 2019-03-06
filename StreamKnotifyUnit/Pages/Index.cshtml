@@ -1,9 +1,9 @@
 ﻿@page "/"
-@using StreamKnotifyUnit.Services
-@using StreamKomponentUnitLib
-@using Kendo.Blazor.Components.TabStrip
+@using StreamKnotifyUnit.Services;
+@using Kendo.Blazor.Components.TabStrip;
 @using StreamKnotifyUnit.Shared;
 @inject StreamKnotifyUnit.Services.TwitchService Twitchy;
+@inject ToastService Toasty;
 
 <h1>Hello, JT7 SKU Community!</h1>
 <select bind=@tabPosition>
@@ -56,10 +56,10 @@
     </KendoTab>
 </KendoTabStrip>
 
-@*<KendoButton class="active" onclick="@(() => ToastService.ShowToast("I'm an INFO message", ToastLevel.NewCheer))">Info Toast</KendoButton>
-    <KendoButton class="active" onclick="@(() => ToastService.ShowToast("I'm a SUCCESS message", ToastLevel.NewFollower))">Success Toast</KendoButton>
-    <KendoButton class="btn btn-warning" onclick="@(() => ToastService.ShowToast("I'm a WARNING message", ToastLevel.NewSubscriber))">Warning Toast</KendoButton>
-    <KendoButton class="btn btn-danger" onclick="@(() => ToastService.ShowToast("I'm an ERROR message", ToastLevel.NewTip))">Error Toast</KendoButton>*@
+<KendoButton class=" btn btn-info" onclick="@(() => Toasty.ShowToast("I'm an INFO message", ToastLevel.NewCheer))">Cheer Toast</KendoButton>
+    <KendoButton class="btn btn-success" onclick="@(() => Toasty.ShowToast("I'm a SUCCESS message", ToastLevel.NewFollower))">Success Toast</KendoButton>
+    <KendoButton class="btn btn-warning" onclick="@(() => Toasty.ShowToast("I'm a WARNING message", ToastLevel.NewSubscriber))">Warning Toast</KendoButton>
+    <KendoButton class="btn btn-danger" onclick="@(() => Toasty.ShowToast("I'm an ERROR message", ToastLevel.NewTip))">Error Toast</KendoButton>
 @functions {
     KendoTabPosition tabPosition = KendoTabPosition.Top;
     public List<Follower> FollowerData { get; set; }

@@ -3,9 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using StreamKnotifyUnit.Services;
 
 
-namespace StreamKomponentUnitLib.Toast
+namespace StreamKnotifyUnit.Shared
 {
     public class ToastBase : ComponentBase, IDisposable
     {
