@@ -11,25 +11,23 @@ using System.Net.Http;
 
 namespace TwitchAPI
 {
-    public static class PaypalMe
+    public static class FollowerFunction
     {
-        [FunctionName("PaypalMe")]
+        [FunctionName("FollowerFunc")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "tip/{account}/{amount}")] HttpRequest req, string account, int amount,
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "followers")] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
-            var url = $"https://paypal.me/{account}/{amount}";
-            
+              
             string name = req.Query["name"];
-            var res = new HttpResponseMessage();
+            
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             dynamic data = JsonConvert.DeserializeObject(requestBody);
             name = name ?? data?.name;
-            HttpClient client = new HttpClient();
-            await client.PostAsync(url, new StringContent(""));
-            return url != null
-                ? (ActionResult)new OkObjectResult($"Hello, {url}")
+           
+            return name != null
+                ? (ActionResult)new OkObjectResult($"Hello, {name}")
                 : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
         }
     }

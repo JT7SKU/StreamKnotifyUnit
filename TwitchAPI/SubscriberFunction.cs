@@ -10,11 +10,11 @@ using Newtonsoft.Json;
 
 namespace TwitchAPI
 {
-    public static class Function1
+    public static class SubscriberFunction
     {
         [FunctionName("SubscriberFunction")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "subscribers")] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");

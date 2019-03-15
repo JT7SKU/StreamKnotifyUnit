@@ -6,6 +6,9 @@
     <IsPackable>true</IsPackable>
     <BlazorLinkOnBuild>false</BlazorLinkOnBuild>
     <LangVersion>7.3</LangVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Copyright>Jani "Janisku7" Turunen</Copyright>
+    <Authors>Janisku7</Authors>
   </PropertyGroup>
 
   <ItemGroup>
