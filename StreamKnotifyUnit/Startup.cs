@@ -9,6 +9,8 @@ namespace StreamKnotifyUnit
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<ToastService>();
+            services.AddScoped<TwitchService>();
+            services.AddScoped<WeatherForecastService>();
         }
 
         public void Configure(IComponentsApplicationBuilder app)
