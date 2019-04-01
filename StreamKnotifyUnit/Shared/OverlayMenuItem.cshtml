@@ -1,0 +1,21 @@
+﻿@implements IDisposable;
+@implements IOverlayMenuItem;
+<li class="nav-item px-3">
+    <NavLink class="nav-link" href=@Linker>
+        <span class="oi oi-home" aria-hidden="true"></span> @Title
+    </NavLink>
+</li>
+@functions{
+    [CascadingParameter] OverlayMenu ContainerOverlayMenu { get; set; }
+    [Parameter] string Title { get; set; }
+    [Parameter] string Linker { get; set; }
+    protected override void OnInit()
+    {
+        ContainerOverlayMenu.AddMenuItem(this);
+    }
+
+    public void Dispose()
+    {
+        ContainerOverlayMenu.RemoveMenuItem(this);
+    }
+}
