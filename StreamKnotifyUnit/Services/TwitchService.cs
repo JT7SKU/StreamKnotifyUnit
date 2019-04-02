@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
-using StreamKnotifyUnit.Shared;
+using StreamKnotifyUnitLibrary;
 namespace StreamKnotifyUnit.Services
 {
     public class TwitchService

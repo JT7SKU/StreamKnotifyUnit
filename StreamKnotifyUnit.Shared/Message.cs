@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace StreamKnotifyUnit.Shared
+namespace StreamKnotifyUnitLibrary
 {
     public class Message
     {

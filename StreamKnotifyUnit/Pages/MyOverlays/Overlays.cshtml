@@ -1,0 +1,14 @@
+﻿@page "/myoverlays/overlays"
+
+<div class="top-row">
+    <OverlayTopMenu></OverlayTopMenu>
+</div>
+<div class="sidebar">
+    <OverlayMenu Title="@Title"></OverlayMenu>
+</div>
+<div class="main">
+
+</div>
+@functions{
+    [Parameter] string Title { get; set; }
+}

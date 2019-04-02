@@ -46,12 +46,17 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Blazor" Version="0.9.0-preview3-19154-02" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="0.9.0-preview3-19154-02" PrivateAssets="all" />
+    <PackageReference Include="Telerik.UI.for.Blazor" Version="0.3.0" />
     <DotNetCliToolReference Include="Microsoft.AspNetCore.Blazor.Cli" Version="0.9.0-preview3-19154-02" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Overlay\Komponents\" />
+    <Folder Include="Toast\" />
     <Folder Include="Overlay\Layouts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StreamKnotifyUnit.Shared\StreamKnotifyUnitLibrary.csproj" />
   </ItemGroup>
 
 </Project>

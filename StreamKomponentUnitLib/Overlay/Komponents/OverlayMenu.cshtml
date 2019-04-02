@@ -1,0 +1,36 @@
+﻿@using  StreamKnotifyUnitLibrary;
+<div class="@OverlayMenuCssClass" onclick="@ToggleOverlayMenu">
+    <ul class="nav flex-column">
+        @foreach (var menuitems in OverlayMenuContent)
+        {
+            <OverlayMenuItem Title=@nameof(OverlistItem.Title) Linker=@nameof(OverlistItem.LinkTo) />
+        }
+    </ul>
+    <button class="btn" onclick="@NewOverlayConfiguration" name="New Overlay."/>
+</div>
+
+
+@functions{
+    bool collapseOverlayMenu = true;
+
+    [Parameter] string Title { get; set; }
+    [Parameter] IList<OverlistItem> OverlayMenuContent { get; set; }
+    string OverlayMenuCssClass => collapseOverlayMenu ? "collapse" : null;
+    IOverlayMenuItem Active;
+    public void AddMenuItem(IOverlayMenuItem overlay)
+    {
+
+    }
+    public void RemoveMenuItem(IOverlayMenuItem overlay)
+    {
+
+    }
+    void ToggleOverlayMenu()
+    {
+        collapseOverlayMenu = !collapseOverlayMenu;
+    }
+    void NewOverlayConfiguration()
+    {
+
+    }
+}

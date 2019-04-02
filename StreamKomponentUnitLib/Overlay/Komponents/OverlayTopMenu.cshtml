@@ -1,0 +1,19 @@
+﻿@using  StreamKnotifyUnitLibrary;
+    <div class="@OverlayMenuCssClass" onclick="@ToggleOverlayMenu">
+        <ul>
+            <OverlayMenuItem Title="Getting Started" Linker="tutorial"></OverlayMenuItem>
+            <OverlayMenuItem Title="Configure" Linker="configure"></OverlayMenuItem>
+        </ul>        
+    </div>
+
+@functions{
+    bool collapseOverlayMenu = true;
+    [Parameter] string Title {get; set;}
+    [Parameter] IList<OverlistItem> OverlayMenuContent { get; set; }
+    string OverlayMenuCssClass => collapseOverlayMenu ? "collapse" : null;
+
+    void ToggleOverlayMenu()
+    {
+        collapseOverlayMenu = !collapseOverlayMenu;
+    }
+}

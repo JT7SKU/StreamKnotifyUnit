@@ -1,7 +1,11 @@
-﻿<div class="follower">
-
+﻿@using StreamKnotifyUnitLibrary;
+<div class="follower">
+        <KendoGridColumn Field="@nameof(Follower.TimeStamp)" Title="Time" />
+        <KendoGridColumn Field="@nameof(Follower.User)" Title="Username" />
+        <KendoGridColumn Field="@nameof(Follower.Follow)" Title="Follow" />
 </div>
 
 @functions{
+    [Parameter] Follower Follower { get; set; }
 
 }

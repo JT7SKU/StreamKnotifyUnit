@@ -1,4 +1,4 @@
-﻿namespace StreamKnotifyUnit.Shared
+﻿namespace StreamKnotifyUnitLibrary
 {
     public enum SubscribeType
     {
