@@ -6,9 +6,10 @@ namespace StreamKnotifyUnitLibrary
 {
     public class OverlistItem
     {
-        public int OrderListItemId { get; set; }
+        public int Id { get; set; }
         public string Title { get; set; }
         public string LinkTo { get; set; }
         public DateTime CreatedTime { get; set; }
+        public List<OverlayKomponent> Komponents { get; set; }
     }
 }
