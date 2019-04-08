@@ -3,7 +3,7 @@
     <h5>@nameof(OverlayKomponent.Name)</h5>
 </div>
 <form class="dialog-body">
-
+    
 </form>
 <div class="dialog-buttons">
     <KendoButton OnClick="@OnCancel">Cancel</KendoButton>
@@ -11,12 +11,12 @@
 </div>
 @functions{
 
-    [Parameter] IList<OverlayKomponentType> komponentTypes { get; set; }
-    [Parameter] IList<OverlayKomponent> komponents { get; set; }
-    Action OnSubmit { get; set; }
-    Action OnCancel { get; set; }
+        [Parameter] IList<OverlayKomponentType> komponentTypes { get; set; }
+        [Parameter] IList<OverlayKomponent> komponents { get; set; }
+        [Parameter] Action OnSubmit { get; set; }
+    [Parameter] Action OnCancel { get; set; }
     // Sets components so each component have they specific type
-    protected async void SetParametersAsync()
+    protected async void SOnParametersSetAsync()
     {
         // this configure Components(Komponents on this context) to Overlay and all components have location(pos(x,y,z)) space 
     }

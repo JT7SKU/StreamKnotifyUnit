@@ -14,8 +14,8 @@
 
 </head>
 <body>
-    <app><div class="progress-bar-animated"/></app>
-
+    <app>@(await Html.RenderComponentAsync<StreamKnotifyUnit.App>)
+    </app>
     <script src="_framework/components.webassembly.js"></script>
 </body>
 </html>

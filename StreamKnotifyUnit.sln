@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.28606.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKnotifyUnit", "StreamKnotifyUnit\StreamKnotifyUnit.csproj", "{80BAAD04-2E5F-4E86-AFF8-5C8852F4F02E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKnotifyUnitLibrary", "StreamKnotifyUnit.Shared\StreamKnotifyUnitLibrary.csproj", "{4D8B0F06-C184-4882-9816-9E79251266AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKnotifyUnit.Library", "StreamKnotifyUnit.Shared\StreamKnotifyUnit.Library.csproj", "{4D8B0F06-C184-4882-9816-9E79251266AA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwitchAPI", "TwitchAPI\TwitchAPI.csproj", "{8B787EB0-576A-4C4F-95F2-0EDC9BEE6FFE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKomponentUnitLib", "StreamKomponentUnitLib\StreamKomponentUnitLib.csproj", "{96EEC4A9-6745-4953-BF5E-2406C1CB9899}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKomponentUnit.Lib", "StreamKomponentUnitLib\StreamKomponentUnit.Lib.csproj", "{96EEC4A9-6745-4953-BF5E-2406C1CB9899}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
