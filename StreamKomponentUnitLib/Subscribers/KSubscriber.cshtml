@@ -1,0 +1,9 @@
+﻿@using JT7SKU.Lib.Twitch;
+<div class="subscriber">
+    <h5>@subscriber</h5>
+</div>
+
+@functions{
+    [Parameter] protected Subscriber subscriber { get; set; }
+    [Parameter] protected RenderFragment<Subscriber> Name { get; set; }
+}

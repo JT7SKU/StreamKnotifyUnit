@@ -1,4 +1,4 @@
-﻿@using StreamKnotifyUnitLibrary;
+﻿@using JT7SKU.Lib.Twitch;
 <div class="follower">
         <KendoGridColumn Field="@nameof(Follower.TimeStamp)" Title="Time" />
         <KendoGridColumn Field="@nameof(Follower.User)" Title="Username" />
@@ -7,5 +7,8 @@
 
 @functions{
     [Parameter] Follower Follower { get; set; }
-
+    async Task OnParametersSetAsync()
+    {
+        
+    }
 }

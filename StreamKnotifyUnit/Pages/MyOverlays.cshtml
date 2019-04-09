@@ -1,9 +1,11 @@
-﻿@page "/myoverlays"
+﻿@using StreamKomponentUnit.Lib;
+@page "/myoverlays"
+
 <div class="sidebar">
     <OverlayMenu Title="@Title"></OverlayMenu>
 </div>
 <div class="main">
-
+   
 </div>
 @functions{
     [Parameter] string Title { get; set; }
