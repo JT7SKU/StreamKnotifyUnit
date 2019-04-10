@@ -57,6 +57,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="content\KnotifyKortit\" />
     <Folder Include="Overlay\Layouts\" />
   </ItemGroup>
 
