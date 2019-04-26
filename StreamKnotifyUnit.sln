@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKnotifyUnit", "Stream
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKnotifyUnit.Library", "StreamKnotifyUnit.Shared\StreamKnotifyUnit.Library.csproj", "{4D8B0F06-C184-4882-9816-9E79251266AA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwitchAPI", "TwitchAPI\TwitchAPI.csproj", "{8B787EB0-576A-4C4F-95F2-0EDC9BEE6FFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKnotifyUnit.API", "TwitchAPI\StreamKnotifyUnit.API.csproj", "{8B787EB0-576A-4C4F-95F2-0EDC9BEE6FFE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKomponentUnit.Lib", "StreamKomponentUnitLib\StreamKomponentUnit.Lib.csproj", "{96EEC4A9-6745-4953-BF5E-2406C1CB9899}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SisuKorttiUnit.Visualizer", "SisuKorttiUnit.Visualizer\SisuKorttiUnit.Visualizer.csproj", "{9DC000BE-C769-44DC-A7B5-D993A8FB0650}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SisuKorttiUnit.Visualizer", "SisuKorttiUnit.Visualizer\SisuKorttiUnit.Visualizer.csproj", "{9DC000BE-C769-44DC-A7B5-D993A8FB0650}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKomponentUnit.Knotify", "StreamKomponentUnit.Knotify\StreamKomponentUnit.Knotify.csproj", "{C11B3B4D-0892-4FEA-8C2B-B5CE6C38C8F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{9DC000BE-C769-44DC-A7B5-D993A8FB0650}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DC000BE-C769-44DC-A7B5-D993A8FB0650}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DC000BE-C769-44DC-A7B5-D993A8FB0650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C11B3B4D-0892-4FEA-8C2B-B5CE6C38C8F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C11B3B4D-0892-4FEA-8C2B-B5CE6C38C8F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C11B3B4D-0892-4FEA-8C2B-B5CE6C38C8F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C11B3B4D-0892-4FEA-8C2B-B5CE6C38C8F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

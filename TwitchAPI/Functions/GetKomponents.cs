@@ -6,40 +6,40 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
 
-namespace TwitchAPI
+namespace StreamKnotifyUnit.API
 {
-    public static class GetSubscribers
+    public static class GetKomponents
     {
-        [FunctionName("GetSubscribers")]
+        [FunctionName("GetKomponents")]
         public static async Task<List<string>> RunOrchestrator(
             [OrchestrationTrigger] DurableOrchestrationContext context)
         {
             var outputs = new List<string>();
 
             // Replace "hello" with the name of your Durable Activity Function.
-            outputs.Add(await context.CallActivityAsync<string>("GetSubscribers_Hello", "Tokyo"));
-            outputs.Add(await context.CallActivityAsync<string>("GetSubscribers_Hello", "Seattle"));
-            outputs.Add(await context.CallActivityAsync<string>("GetSubscribers_Hello", "London"));
+            outputs.Add(await context.CallActivityAsync<string>("GetKomponents_Hello", "Rating"));
+            outputs.Add(await context.CallActivityAsync<string>("GetKomponents_Hello", "Twitch"));
+            outputs.Add(await context.CallActivityAsync<string>("GetKomponents_Hello", "Stream"));
 
             // returns ["Hello Tokyo!", "Hello Seattle!", "Hello London!"]
             return outputs;
         }
 
-        [FunctionName("GetSubscribers_Hello")]
+        [FunctionName("GetKomponents_Hello")]
         public static string SayHello([ActivityTrigger] string name, ILogger log)
         {
             log.LogInformation($"Saying hello to {name}.");
             return $"Hello {name}!";
         }
 
-        [FunctionName("GetSubscribers_HttpStart")]
+        [FunctionName("GetKomponents_HttpStart")]
         public static async Task<HttpResponseMessage> HttpStart(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")]HttpRequestMessage req,
             [OrchestrationClient]DurableOrchestrationClient starter,
             ILogger log)
         {
             // Function input comes from the request content.
-            string instanceId = await starter.StartNewAsync("GetSubscribers", null);
+            string instanceId = await starter.StartNewAsync("GetKomponents", null);
 
             log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
 

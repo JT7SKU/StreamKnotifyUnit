@@ -8,13 +8,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace TwitchAPI
+namespace StreamKnotifyUnit.API
 {
-    public static class SubscriberFunction
+    public static class KnotifyFunction
     {
-        [FunctionName("SubscriberFunction")]
+        [FunctionName("KnotifyFunction")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "subscribers")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "knotifications")] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");

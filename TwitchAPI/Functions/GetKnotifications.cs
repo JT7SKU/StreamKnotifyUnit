@@ -6,40 +6,40 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
 
-namespace TwitchAPI
+namespace StreamKnotifyUnit.API
 {
-    public static class GetTips
+    public static class GetKnotifications
     {
-        [FunctionName("GetTips")]
+        [FunctionName("GetKnotifications")]
         public static async Task<List<string>> RunOrchestrator(
             [OrchestrationTrigger] DurableOrchestrationContext context)
         {
             var outputs = new List<string>();
 
             // Replace "hello" with the name of your Durable Activity Function.
-            outputs.Add(await context.CallActivityAsync<string>("GetTips_Hello", "Tokyo"));
-            outputs.Add(await context.CallActivityAsync<string>("GetTips_Hello", "Seattle"));
-            outputs.Add(await context.CallActivityAsync<string>("GetTips_Hello", "London"));
+            outputs.Add(await context.CallActivityAsync<string>("GetKnotifications_Hello", "New Sub"));
+            outputs.Add(await context.CallActivityAsync<string>("GetKnotifications_Hello", "New Follower"));
+            outputs.Add(await context.CallActivityAsync<string>("GetKnotifications_Hello", "New Tip"));
 
             // returns ["Hello Tokyo!", "Hello Seattle!", "Hello London!"]
             return outputs;
         }
 
-        [FunctionName("GetTips_Hello")]
+        [FunctionName("GetKnotifications_Hello")]
         public static string SayHello([ActivityTrigger] string name, ILogger log)
         {
             log.LogInformation($"Saying hello to {name}.");
             return $"Hello {name}!";
         }
 
-        [FunctionName("GetTips_HttpStart")]
+        [FunctionName("GetKnotifications_HttpStart")]
         public static async Task<HttpResponseMessage> HttpStart(
-            [HttpTrigger(AuthorizationLevel.User, "get", "post")]HttpRequestMessage req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")]HttpRequestMessage req,
             [OrchestrationClient]DurableOrchestrationClient starter,
             ILogger log)
         {
             // Function input comes from the request content.
-            string instanceId = await starter.StartNewAsync("GetTips", null);
+            string instanceId = await starter.StartNewAsync("GetKnotifications", null);
 
             log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
 
