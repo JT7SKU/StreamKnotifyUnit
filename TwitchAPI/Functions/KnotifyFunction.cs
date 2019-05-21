@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace StreamKnotifyUnit.API
+namespace StreamKnotifyUnit.API.Functions
 {
     public static class KnotifyFunction
     {
@@ -29,5 +29,6 @@ namespace StreamKnotifyUnit.API
                 ? (ActionResult)new OkObjectResult($"Hello, {name}")
                 : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
         }
+        
     }
 }

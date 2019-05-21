@@ -12,7 +12,7 @@ namespace StreamKnotifyUnit.API
     {
         [FunctionName("GetKnotifications")]
         public static async Task<List<string>> RunOrchestrator(
-            [OrchestrationTrigger] DurableOrchestrationContext context)
+            [OrchestrationTrigger] IDurableOrchestrationContext context)
         {
             var outputs = new List<string>();
 
@@ -35,10 +35,11 @@ namespace StreamKnotifyUnit.API
         [FunctionName("GetKnotifications_HttpStart")]
         public static async Task<HttpResponseMessage> HttpStart(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")]HttpRequestMessage req,
-            [OrchestrationClient]DurableOrchestrationClient starter,
+            [OrchestrationClient]IDurableOrchestrationClient starter,
             ILogger log)
         {
             // Function input comes from the request content.
+            dynamic eventData = await req.Content.ReadAsAsync<object>();
             string instanceId = await starter.StartNewAsync("GetKnotifications", null);
 
             log.LogInformation($"Started orchestration with ID = '{instanceId}'.");

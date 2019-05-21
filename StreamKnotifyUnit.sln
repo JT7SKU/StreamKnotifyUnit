@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKnotifyUnit.API", "Tw
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKomponentUnit.Lib", "StreamKomponentUnitLib\StreamKomponentUnit.Lib.csproj", "{96EEC4A9-6745-4953-BF5E-2406C1CB9899}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SisuKorttiUnit.Visualizer", "SisuKorttiUnit.Visualizer\SisuKorttiUnit.Visualizer.csproj", "{9DC000BE-C769-44DC-A7B5-D993A8FB0650}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKomponentUnit.Gridi", "StreamKomponentUnit.Knotify\StreamKomponentUnit.Gridi.csproj", "{C11B3B4D-0892-4FEA-8C2B-B5CE6C38C8F8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKomponentUnit.Knotify", "StreamKomponentUnit.Knotify\StreamKomponentUnit.Knotify.csproj", "{C11B3B4D-0892-4FEA-8C2B-B5CE6C38C8F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKomponentUnit.WebbingR.Knotify", "StreamKomponentUnit.WebbingR.Knotify\StreamKomponentUnit.WebbingR.Knotify.csproj", "{EB88B98D-40A9-4193-BB24-E89A39F01975}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,14 +37,14 @@ Global
 		{96EEC4A9-6745-4953-BF5E-2406C1CB9899}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96EEC4A9-6745-4953-BF5E-2406C1CB9899}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96EEC4A9-6745-4953-BF5E-2406C1CB9899}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9DC000BE-C769-44DC-A7B5-D993A8FB0650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9DC000BE-C769-44DC-A7B5-D993A8FB0650}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9DC000BE-C769-44DC-A7B5-D993A8FB0650}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9DC000BE-C769-44DC-A7B5-D993A8FB0650}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C11B3B4D-0892-4FEA-8C2B-B5CE6C38C8F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C11B3B4D-0892-4FEA-8C2B-B5CE6C38C8F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C11B3B4D-0892-4FEA-8C2B-B5CE6C38C8F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C11B3B4D-0892-4FEA-8C2B-B5CE6C38C8F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB88B98D-40A9-4193-BB24-E89A39F01975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB88B98D-40A9-4193-BB24-E89A39F01975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB88B98D-40A9-4193-BB24-E89A39F01975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB88B98D-40A9-4193-BB24-E89A39F01975}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
