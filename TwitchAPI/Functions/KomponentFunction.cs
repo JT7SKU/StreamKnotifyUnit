@@ -13,12 +13,12 @@ namespace StreamKnotifyUnit.API
 {
     public static class KomponentFunction
     {
-        [FunctionName("KomponentFunc")]
-        public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "komponents")] HttpRequest req,
+        [FunctionName(nameof(KomponentFunc))]
+        public static async Task<IActionResult> KomponentFunc(
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "komponents")] HttpRequest req,
             ILogger log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
+            log.LogInformation("Getting Komponents have being requested.");
               
             string name = req.Query["name"];
             

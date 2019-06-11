@@ -15,6 +15,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKomponentUnit.Gridi",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKomponentUnit.WebbingR.Knotify", "StreamKomponentUnit.WebbingR.Knotify\StreamKomponentUnit.WebbingR.Knotify.csproj", "{EB88B98D-40A9-4193-BB24-E89A39F01975}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKomponentUnit.Overlay", "StreamKomponentUnit.Overlay\StreamKomponentUnit.Overlay.csproj", "{6133AD7F-43C3-4C12-9BBA-6E40CB0AEB82}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKomponentUnit.Toasty", "StreamKomponentUnit.Toasty\StreamKomponentUnit.Toasty.csproj", "{39C5D1CD-8D43-483B-865B-AD1EBFA3012D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKomponentUnit.Tabi", "StreamKomponentUnit.Tabi\StreamKomponentUnit.Tabi.csproj", "{D82E3FC2-A7A2-4489-9F84-B532451036A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicesKomponentUnit.WebbingR.KnotifyR", "ServicesKomponentUnit.WebbingR.KnotifyR\ServicesKomponentUnit.WebbingR.KnotifyR.csproj", "{45F4C585-DC02-4C0E-8803-E148491D1D3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +53,22 @@ Global
 		{EB88B98D-40A9-4193-BB24-E89A39F01975}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB88B98D-40A9-4193-BB24-E89A39F01975}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB88B98D-40A9-4193-BB24-E89A39F01975}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6133AD7F-43C3-4C12-9BBA-6E40CB0AEB82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6133AD7F-43C3-4C12-9BBA-6E40CB0AEB82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6133AD7F-43C3-4C12-9BBA-6E40CB0AEB82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6133AD7F-43C3-4C12-9BBA-6E40CB0AEB82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39C5D1CD-8D43-483B-865B-AD1EBFA3012D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39C5D1CD-8D43-483B-865B-AD1EBFA3012D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39C5D1CD-8D43-483B-865B-AD1EBFA3012D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39C5D1CD-8D43-483B-865B-AD1EBFA3012D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D82E3FC2-A7A2-4489-9F84-B532451036A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D82E3FC2-A7A2-4489-9F84-B532451036A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D82E3FC2-A7A2-4489-9F84-B532451036A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D82E3FC2-A7A2-4489-9F84-B532451036A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45F4C585-DC02-4C0E-8803-E148491D1D3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45F4C585-DC02-4C0E-8803-E148491D1D3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45F4C585-DC02-4C0E-8803-E148491D1D3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45F4C585-DC02-4C0E-8803-E148491D1D3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

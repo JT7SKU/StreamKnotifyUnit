@@ -1,3 +1,7 @@
-﻿<div class="knotify-kard">
+﻿@typeparam TItem
+<div class="gridiItem">
     This Blazor component is defined in the <strong>StreamKomponentUnit.Knotify</strong> package.
 </div>
+@functions{
+    [Parameter] RenderFragment<TItem> Context { get; set; }
+}
