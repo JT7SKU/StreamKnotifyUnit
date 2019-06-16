@@ -1,0 +1,36 @@
+﻿@using StreamKomponentUnit.WebbingR.Knotify
+
+<CascadingValue Value="this">
+    @ChildContent
+</CascadingValue>
+<div class="knotifykards-body">
+    @ActiveKnotifyKard?.ChildContent
+</div>
+
+@functions{
+    [Parameter] private RenderFragment ChildContent { get; set; }
+    public IKnotifyKard ActiveKnotifyKard { get; private set; }
+
+    public void AddKard(IKnotifyKard knotifyKard)
+    {
+        if (ActiveKnotifyKard == null)
+        {
+            SetActiveKard(knotifyKard);
+        }
+    }
+    public void RemoveKard(IKnotifyKard knotifyKard)
+    {
+        if (ActiveKnotifyKard == knotifyKard)
+        {
+            SetActiveKard(null);
+        }
+    }
+    public void SetActiveKard(IKnotifyKard knotifyKard)
+    {
+        if (ActiveKnotifyKard != knotifyKard)
+        {
+            ActiveKnotifyKard = knotifyKard;
+            StateHasChanged();
+        }
+    }
+}

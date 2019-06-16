@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="AdaptiveCards.Rendering.Html" Version="1.2.0-beta1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.4" />
   </ItemGroup>
 
 </Project>
