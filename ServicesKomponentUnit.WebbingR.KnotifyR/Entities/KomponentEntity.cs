@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -6,50 +7,49 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Extensions.SignalRService;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
+using StreamKnotifyUnit.Library;
 
 namespace ServicesKomponentUnit.WebbingR.KnotifyR.Entities
 {
-    public static class KomponentEntity
+    public  class KomponentEntity
     {
-        [FunctionName("KomponentEntity")]
-        public static async Task<List<string>> RunOrchestrator(
-            [OrchestrationTrigger] IDurableOrchestrationContext context)
+        private readonly KorttiKomponenttiDbContext korttiContext;
+        public KomponentEntity(KorttiKomponenttiDbContext context)
         {
-            var outputs = new List<string>();
-
-            // Replace "hello" with the name of your Durable Activity Function.
-            outputs.Add(await context.CallActivityAsync<string>("KomponentEntity_Hello", "Tokyo"));
-            outputs.Add(await context.CallActivityAsync<string>("KomponentEntity_Hello", "Seattle"));
-            outputs.Add(await context.CallActivityAsync<string>("KomponentEntity_Hello", "London"));
-
-            // returns ["Hello Tokyo!", "Hello Seattle!", "Hello London!"]
-            return outputs;
+            korttiContext = context;
         }
 
-        [FunctionName("KomponentEntity_Hello")]
-        public static string SayHello([ActivityTrigger] string name, ILogger log)
+        [FunctionName(nameof(KorttiLaskuri))]
+        public async Task KorttiLaskuri([EntityTrigger(EntityName ="KomponentEntity")]IDurableEntityContext entityContext, 
+            [SignalR(HubName ="knotifyr")]IAsyncCollector<SignalRMessage> collector)
         {
-            log.LogInformation($"Saying hello to {name}.");
-            return $"Hello {name}!";
+            var pakka = entityContext.GetState<KorttiPakka>(); 
+            var kortti = entityContext.GetInput<KorttiKomponentti>();
+            switch (entityContext.OperationName)
+            {
+                case "new":
+                    pakka.Kortit.Add(kortti);
+                    await collector.AddAsync(UpdateKorttiPakka(pakka, kortti));
+                    break;
+                case "remove":
+                    pakka.Kortit.Remove(kortti);
+                    break;
+                case "clear":
+                    break;
+            }
+
+            entityContext.SetState(pakka);
         }
 
-        public Task KomponentEntity([EntityTrigger(EntityName ="KomponentEntity")]IDurableEntityContext entityContext, [SignalR(HubName =("knotifyr")]IAsyncCollector<SignalRMessage> collector)
+        private SignalRMessage UpdateKorttiPakka(KorttiPakka pakka, KorttiKomponentti kortti)
         {
-            return Task.CompletedTask;
+            return new SignalRMessage
+            {
+                Target = "korttipakkaupdated",
+                Arguments = new object[] { pakka, kortti }
+            };
         }
 
-        [FunctionName("KomponentEntity_HttpStart")]
-        public static async Task<HttpResponseMessage> HttpStart(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")]HttpRequestMessage req,
-            [OrchestrationClient]IDurableOrchestrationClient starter,
-            ILogger log)
-        {
-            // Function input comes from the request content.
-            string instanceId = await starter.StartNewAsync("KomponentEntity", null);
-
-            log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
-
-            return starter.CreateCheckStatusResponse(req, instanceId);
-        }
+        
     }
 }

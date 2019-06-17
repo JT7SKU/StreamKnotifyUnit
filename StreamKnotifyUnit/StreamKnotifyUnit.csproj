@@ -2,24 +2,24 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RunCommand>dotnet</RunCommand>
-    <RunArguments>blazor serve</RunArguments>
+ 
     <LangVersion>7.3</LangVersion>
+  <RazorLangVersion>3.0</RazorLangVersion>
+    <_RazorComponentInclude>**\*.cshtml</_RazorComponentInclude>
   </PropertyGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="AdaptiveCards.Rendering.Html" Version="1.2.0" />
     <PackageReference Include="JT7SKU.Lib.Twitch" Version="1.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Blazor" Version="3.0.0-preview5-19227-01" />
-    <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="3.0.0-preview5-19227-01" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor" Version="3.0.0-preview6.19307.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="3.0.0-preview6.19307.2" PrivateAssets="all" />
     <PackageReference Include="Telerik.UI.for.Blazor" Version="0.5.0" />
     <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
-
-    
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\img\" />
+ 
   </ItemGroup>
 
   <ItemGroup>

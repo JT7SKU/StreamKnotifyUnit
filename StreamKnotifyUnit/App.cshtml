@@ -2,4 +2,29 @@
     Configuring this here is temporary. Later we'll move the app config
     into Program.cs, and it won't be necessary to specify AppAssembly.
 -->
-<Router AppAssembly="typeof(Program).Assembly" />
+    <CascadingAuthenticationState>
+        <Router AppAssembly="typeof(Program).Assembly">
+            <NotFoundContent>Page not found</NotFoundContent>
+            <NotAuthorizedContent>
+
+                <div class="main">
+
+                    <h2>You're signed out</h2>
+
+                    <p>To continue, please sign in.</p>
+
+                    <a class="btn btn-danger" href="user/signin">Sign in</a>
+
+                </div>
+
+            </NotAuthorizedContent>
+
+
+
+            <AuthorizingContent>
+
+                Please wait...
+
+            </AuthorizingContent>
+        </Router>
+    </CascadingAuthenticationState>
